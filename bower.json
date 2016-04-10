@@ -1,18 +1,18 @@
 {
-  "name": "seed-element",
-  "version": "1.0.7",
+  "name": "plutonium-field-recipient",
+  "version": "1.0.0",
   "authors": [
-    "Anonymous <anonymous@example.com>"
+    "lordoftheflies <heglas11@gmail.com>"
   ],
-  "description": "An element providing a solution to no problem in particular.",
+  "description": "Text-field with a list picker.",
   "keywords": [
     "web-component",
     "polymer",
-    "seed"
+    "plutonium"
   ],
-  "main": "seed-element.html",
+  "main": "plutonium-field-recipient.html",
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/<USERNAME>/seed-element/",
+  "homepage": "https://github.com/lordoftheflies/plutonium-field-recipient/",
   "ignore": [
     "/.*",
     "/test/"
