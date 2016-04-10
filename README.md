@@ -1,4 +1,6 @@
-# seed-element
+# plutonium-field-recipient
+
+Text-field with a list picker.
 
 An element providing a starting point for your own reusable Polymer elements.
 
