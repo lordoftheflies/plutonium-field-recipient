@@ -20,27 +20,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <p>An example of <code>&lt;plutonium-field-recipient&gt;</code>:</p>
 
-    <p>Make words! <button id="saybtn">Say Something</button></p>
-    <p>Make lasers! <button id="laserbtn">Fire lasers</button></p>
-
-    <plutonium-field-recipient author='{"name": "Lord Meowser", "image": "http://lorempixel.com/g/300/200/cats/"}' fancy>
-      <h2>Hello plutonium-field-recipient</h2>
+    <plutonium-field-recipient
+        label="To"
+        picker-title="Contacts"
+        attr-for-selected="id"
+        items='[{ "id": "c1", "name": "Bob", "email": "bob@gmail.com" }, { "id": "c2", "name": "Tim", "email": "tim@gmail.com"}, { "id": "c3", "name": "Mike", "email": "mike@gmail.com" }]'>
+      
     </plutonium-field-recipient>
-
+  
     <script>
-      var seedElement = document.querySelector('plutonium-field-recipient');
-
-      document.querySelector('#saybtn').addEventListener('click', function() {
-        alert(seedElement.sayHello('Hallo!'));
-      });
-
-      document.querySelector('#laserbtn').addEventListener('click', function() {
-        seedElement.fireLasers();
-      });
-
-      document.addEventListener("plutonium-field-recipient-lasers", function(e) {
-        console.log(e.detail.sound);
-      });
+     
 
     </script>
 

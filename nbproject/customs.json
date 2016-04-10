@@ -1,0 +1,35 @@
+{
+    "elements": {
+        "template": {},
+        "paper-dialog": {},
+        "paper-icon-button": {},
+        "paper-button": {},
+        "dom-module": {},
+        "paper-material": {},
+        "paper-dialog-scrollable": {},
+        "paper-input": {},
+        "paper-listbox": {
+            "attributes": {
+                "selected-values": {}
+            }
+        },
+        "content": {}
+    },
+    "attributes": {
+        "dialog-dismiss": {},
+        "icon": {},
+        "is": {},
+        "dialog-confirm": {},
+        "label": {},
+        "title": {},
+        "selected-values": {},
+        "multi": {},
+        "name": {},
+        "id": {},
+        "attr-for-selected": {},
+        "on-tap": {},
+        "class": {},
+        "items": {},
+        "modal": {}
+    }
+}
