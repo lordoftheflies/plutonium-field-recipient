@@ -9,16 +9,16 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>plutonium-field-recipient Demo</title>
-    <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link rel="import" href="../plutonium-field-recipient.html">
-  </head>
-  <body unresolved>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <title>plutonium-field-recipient Demo</title>
+        <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+        <link rel="import" href="../plutonium-field-recipient.html">
+    </head>
+    <body unresolved>
 
-    <p>An example of <code>&lt;plutonium-field-recipient&gt;</code>:</p>
+        <p>An example of <code>&lt;plutonium-field-recipient&gt;</code>:</p>
 
     <plutonium-field-recipient
         label="To"
@@ -28,14 +28,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         clear-icon="clear"
         clear-button-tooltip="Clear recipients input."
         attr-for-selected="id"
+        as="item"
         items='[{ "id": "c1", "name": "Bob", "email": "bob@gmail.com" }, { "id": "c2", "name": "Tim", "email": "tim@gmail.com"}, { "id": "c3", "name": "Mike", "email": "mike@gmail.com" }]'>
-      
+        <template is="dom-repeat" items='[{ "id": "c1", "name": "Bob", "email": "bob@gmail.com" }, { "id": "c2", "name": "Tim", "email": "tim@gmail.com"}, { "id": "c3", "name": "Mike", "email": "mike@gmail.com" }]'>
+            <paper-item id="[[item.id]]" class="item pad">
+                <label>[[item.name]]</label> 
+                <label>(<span>[[item.email]]</span>)</label>
+            </paper-item>
+        </template>
     </plutonium-field-recipient>
-  
+
     <script>
-     
+
 
     </script>
 
-  </body>
+</body>
 </html>
