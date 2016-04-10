@@ -77,8 +77,8 @@ Example:
 
         <div class="plutonium-input">
             <paper-input name="recipients" label="[[label]]" value$="{{_recipients}}"></paper-input>
-            <paper-icon-button icon="supervisor-account" title="Choose users." on-tap="onOpenRecipientsDialog"></paper-icon-button>
-            <paper-icon-button icon="clear" title="Clear" on-tap="onClearRecipients"></paper-icon-button>
+            <paper-icon-button icon="[[pickerIcon]]" title="[[pickerButtonTooltip]]" on-tap="onOpenRecipientsDialog"></paper-icon-button>
+            <paper-icon-button icon="[[clearIcon]]" title="[[clearButtonTooltip]]" on-tap="onClearRecipients"></paper-icon-button>
         </div>
     </template>
 
@@ -94,9 +94,37 @@ Example:
                     notify: true
                 },
                 /**
+                 * Iron-icon key for the picker open button.
+                 */
+                pickerIcon: {
+                    type: String,
+                    notify: true
+                },
+                /**
                  * Title of the picker dialog window.
                  */
                 pickerTitle: {
+                    type: String,
+                    notify: true
+                },
+                /**
+                 * Tooltip for picker button.
+                 */
+                pickerButtonTooltip: {
+                    type: String,
+                    notify: true
+                },
+                /**
+                 * Iron-icon key for the clear input button.
+                 */
+                clearIcon: {
+                    type: String,
+                    notify: true
+                },
+                /**
+                 * Tooltip for clear button.
+                 */
+                clearButtonTooltip: {
                     type: String,
                     notify: true
                 },
