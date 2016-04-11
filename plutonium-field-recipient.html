@@ -50,11 +50,16 @@ Example:
             :host div.plutonium-input {
                 @apply(--layout-horizontal);
             }
+            
+            :host paper-dialog {
+                @apply(--layout-vertical);
+                max-height: 50%;
+            }
         </style>
 
         <paper-dialog id="recipientChooserDialog" modal>
             <h2>[[pickerTitle]]</h2>
-            <paper-dialog-scrollable class="layout vertical">
+            <paper-dialog-scrollable class="layout flex">
                 <paper-listbox id="contactList"
                                class="layout flex"
                                attr-for-selected="{{attrForSelected}}"
