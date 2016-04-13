@@ -10,11 +10,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-dialog/paper-dialog.html">
+<link rel="import" href="../paper-radio-button/paper-radio-button.html">
+<link rel="import" href="../paper-tabs/paper-tabs.html">
 <link rel="import" href="../paper-item/paper-item.html">
 <link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../paper-dialog-scrollable/paper-dialog-scrollable.html">
 <link rel="import" href="../paper-input/paper-input.html">
 <link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-pages/iron-pages.html">
 <link rel="import" href="../iron-icons/iron-icons.html">
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../paper-listbox/paper-listbox.html">
@@ -51,7 +54,7 @@ Example:
             :host div.plutonium-input {
                 @apply(--layout-horizontal);
             }
-            
+
             :host paper-dialog-scrollable {
                 @apply(--layout-vertical);
                 height: 350px;
@@ -60,16 +63,47 @@ Example:
 
         <paper-dialog id="recipientChooserDialog" modal>
             <h2>[[pickerTitle]]</h2>
+
+            <paper-material elevation="1">
+                <div>{{_recipients}}</div>
+
+                <paper-tabs selected="{{selectionMode}}">
+                    <paper-tab>Person</paper-tab>
+                    <paper-tab>Group</paper-tab>
+                    <paper-tab>Network</paper-tab>
+                </paper-tabs>
+            </paper-material>
+
             <paper-dialog-scrollable class="layout flex">
-                <paper-listbox id="contactList"
-                               class="layout flex"
-                               attr-for-selected="{{attrForSelected}}"
-                               multi
-                               items="[[items]]"
-                               as="[[as]]"
-                               selected-values="{{selectedItemIds}}">
-                    <content></content>
-                </paper-listbox>
+                <iron-pages selected="{{selectionMode}}">
+                    <paper-listbox id="contactList"
+                                   class="layout flex"
+                                   attr-for-selected="{{attrForSelected}}"
+                                   multi
+                                   items="[[items]]"
+                                   as="[[as]]"
+                                   selected-values="{{selectedItemIds}}">
+                        <content></content>
+                    </paper-listbox>
+                    <paper-listbox id="contactList"
+                                   class="layout flex"
+                                   attr-for-selected="{{attrForSelected}}"
+                                   multi
+                                   items="[[items]]"
+                                   as="[[as]]"
+                                   selected-values="{{selectedItemIds}}">
+                        <content></content>
+                    </paper-listbox>
+                    <paper-listbox id="contactList"
+                                   class="layout flex"
+                                   attr-for-selected="{{attrForSelected}}"
+                                   multi
+                                   items="[[items]]"
+                                   as="[[as]]"
+                                   selected-values="{{selectedItemIds}}">
+                        <content></content>
+                    </paper-listbox>
+                </iron-pages>
             </paper-dialog-scrollable>
             <div class="buttons">
                 <paper-button dialog-dismiss>Cancel</paper-button>
@@ -88,6 +122,14 @@ Example:
         Polymer({
             is: 'plutonium-field-recipient',
             properties: {
+                /**
+                 * Selection mode.
+                 */
+                selectionMode: {
+                    type: Number,
+                    notify: true,
+                    value: 0
+                },
                 /**
                  * Input label.
                  */
