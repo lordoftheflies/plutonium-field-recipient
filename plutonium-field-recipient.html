@@ -70,21 +70,11 @@ Example:
                 <paper-tabs selected="{{selectionMode}}">
                     <paper-tab>Person</paper-tab>
                     <paper-tab>Group</paper-tab>
-                    <paper-tab>Network</paper-tab>
                 </paper-tabs>
             </paper-material>
 
             <paper-dialog-scrollable class="layout flex">
                 <iron-pages selected="{{selectionMode}}">
-                    <paper-listbox id="contactList"
-                                   class="layout flex"
-                                   attr-for-selected="{{attrForSelected}}"
-                                   multi
-                                   items="[[items]]"
-                                   as="[[as]]"
-                                   selected-values="{{selectedItemIds}}">
-                        <content></content>
-                    </paper-listbox>
                     <paper-listbox id="contactList"
                                    class="layout flex"
                                    attr-for-selected="{{attrForSelected}}"
